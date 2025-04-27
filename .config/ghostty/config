@@ -1,0 +1,14 @@
+
+theme = catppuccin-mocha
+# font-family = "CaskcaydiaCove Nerd Font"
+# font-family = "CaskaydiaCove Nerd Font Mono"
+# font-family = "FiraCode Nerd Font Mono"
+font-family = "JetBrainsMonoNL Nerd Font Mono"
+font-size = 16
+font-feature = -liga
+font-feature = -calt
+font-feature = -dlig
+background-opacity = 0.95
+
+mouse-hide-while-typing = true
+window-save-state = always

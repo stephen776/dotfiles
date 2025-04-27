@@ -1,0 +1,24 @@
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+	autocrlf = input
+  pager = delta
+[user]
+	email = stephenjacobs86@gmail.com
+	name = Steve Jacobs
+[pager]
+	branch = false
+[pull]
+	rebase = false
+[push]
+	autoSetupRemote = true
+  default = current
+[alias]
+  undo = reset --soft HEAD^
+  cm = commit -m
+  co = checkout 
+  cob = checkout -b
+  s = status
+  b = branch
+  bd = branch -d

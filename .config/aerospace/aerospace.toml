@@ -1,0 +1,228 @@
+# Place a copy of this config to ~/.aerospace.toml
+# After that, you can edit ~/.aerospace.toml to your liking
+
+# Feel free to omit keys that you don't use in your config.
+# If the key is absent in your config the default value is taken from this config
+
+# You can use it to add commands that run after login to macOS user session.
+# 'start-at-login' needs to be 'true' for 'after-login-command' to work
+# Available commands: https://nikitabobko.github.io/AeroSpace/commands.html
+after-login-command = []
+
+# You can use it to add commands that run after AeroSpace startup.
+# 'after-startup-command' is run after 'after-login-command'
+# Available commands : https://nikitabobko.github.io/AeroSpace/commands.html
+after-startup-command = []
+
+# Start AeroSpace at login
+start-at-login = true
+
+# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide.html#normalization
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# See: https://nikitabobko.github.io/AeroSpace/guide.html#layouts
+# The 'accordion-padding' specifies the size of accordion padding
+# You can set 0 to disable the padding feature
+accordion-padding = 30
+
+# Possible values: tiles|accordion
+default-root-container-layout = 'tiles'
+
+# Possible values: horizontal|vertical|auto
+# 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
+#               tall monitor (anything higher than wide) gets vertical orientation
+default-root-container-orientation = 'auto'
+
+# Mouse follow focus
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = "move-mouse window-lazy-center"
+
+# Gaps between windows (inner-*) and between monitor edges (outer-*).
+# Possible values:
+# - Constant:     gaps.outer.top = 8
+# - Per monitor:  gaps.outer.top = [{ monitor.main = 16 }, { monitor."some-pattern" = 32 }, 24]
+#                 In this example, 24 is a default value when there is no match.
+#                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
+#                 See: https://nikitabobko.github.io/AeroSpace/guide.html#assign-workspaces-to-monitors
+gaps.inner.horizontal = 16
+gaps.inner.vertical =   16
+gaps.outer.left =       16
+gaps.outer.bottom =     16
+gaps.outer.top =        16
+gaps.outer.right =      16
+
+# 'main' binding mode declaration
+# See: https://nikitabobko.github.io/AeroSpace/guide.html#binding-modes
+# 'main' binding mode must be always presented
+[mode.main.binding]
+
+# All possible keys:
+# - Letters.        a, b, c, ..., z
+# - Numbers.        0, 1, 2, ..., 9
+# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+# - F-keys.         f1, f2, ..., f20
+# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
+# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+#                   keypadMinus, keypadMultiply, keypadPlus
+# - Arrows.         left, down, up, right
+
+# All possible modifiers: cmd, alt, ctrl, shift
+
+# All possible commands: https://nikitabobko.github.io/AeroSpace/commands.html
+
+# You can uncomment this line to open up terminal with alt + enter shortcut
+# See: https://nikitabobko.github.io/AeroSpace/commands.htisiml#exec-and-forget
+# alt-enter = 'exec-and-forget open -n /System/Applications/Utilities/Terminal.app'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands.html#layout
+alt-slash = 'layout tiles horizontal vertical'
+alt-comma = 'layout accordion horizontal vertical'
+alt-space = 'layout floating tiling' # 'floating toggle' in i3
+
+# See: https://nikitabobko.github.io/AeroSpace/commands.html#focus
+alt-n = 'focus left'
+alt-e = 'focus down'
+alt-u = 'focus up'
+alt-i = 'focus right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands.html#move
+alt-ctrl-n = 'move left'
+alt-ctrl-e = 'move down'
+alt-ctrl-u = 'move up'
+alt-ctrl-i = 'move right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands.html#resize
+alt-ctrl-left = 'resize smart -50'
+alt-ctrl-right = 'resize smart +50'
+
+alt-ctrl-f = 'fullscreen --no-outer-gaps'
+alt-ctrl-r = 'flatten-workspace-tree'
+
+# See: https://nikitabobko.github.io/AwroSpace/commands.html#workspace
+alt-tab = 'workspace-back-and-forth'
+alt-l  = 'workspace prev'
+alt-y  = 'workspace next'
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands.html#move-node-to-workspace
+alt-ctrl-1 = 'move-node-to-workspace 1 --focus-follows-window'
+alt-ctrl-2 = 'move-node-to-workspace 2 --focus-follows-window'
+alt-ctrl-3 = 'move-node-to-workspace 3 --focus-follows-window'
+alt-ctrl-4 = 'move-node-to-workspace 4 --focus-follows-window'
+alt-ctrl-5 = 'move-node-to-workspace 5 --focus-follows-window'
+alt-ctrl-6 = 'move-node-to-workspace 6 --focus-follows-window'
+alt-ctrl-7 = 'move-node-to-workspace 7 --focus-follows-window'
+alt-ctrl-8 = 'move-node-to-workspace 8 --focus-follows-window'
+alt-ctrl-9 = 'move-node-to-workspace 9 --focus-follows-window'
+
+# join with
+shift-alt-ctrl-n = 'join-with left'
+shift-alt-ctrl-e = 'join-with down'
+shift-alt-ctrl-u = 'join-with up'
+shift-alt-ctrl-i = 'join-with right'
+
+
+# custom handling for certain apps 
+# apps that should always float
+# [[on-window-detected]]
+# if.app-id = 'com.apple.finder'
+# check-further-callbacks = false
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-id = 'us.zoom.xos'
+# check-further-callbacks = true
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-id = 'com.microsoft.AzureVpnMac'
+# check-further-callbacks = true
+# run = 'layout floating'
+#
+# [[on-window-detected]]
+# if.app-id = 'com.bitwarden.desktop'
+# check-further-callbacks = true
+# run = 'layout floating'
+
+# Set default workspace for certain apps
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+check-further-callbacks = false
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.readdle.smartemail-Mac'
+check-further-callbacks = false
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.MobileSMS'
+check-further-callbacks = false
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+if.during-aerospace-startup = true
+check-further-callbacks = false
+run = 'move-node-to-workspace 2'
+
+# Chrome
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome'
+if.during-aerospace-startup = true
+check-further-callbacks = false
+run = 'move-node-to-workspace 2'
+
+# Brave
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+if.during-aerospace-startup = true
+check-further-callbacks = false
+run = 'move-node-to-workspace 2'
+
+# Zen
+[[on-window-detected]]
+if.app-id = 'org.mozilla.com.zen.browser'
+if.during-aerospace-startup = true
+check-further-callbacks = false
+run = 'move-node-to-workspace 2'
+
+# zoom
+[[on-window-detected]]
+if.app-id = 'us.zoom.xos'
+check-further-callbacks = false
+run = 'move-node-to-workspace 2'
+
+# Bear
+[[on-window-detected]]
+if.app-id = 'net.shinyfrog.bear'
+check-further-callbacks = false
+run = 'move-node-to-workspace 7'
+
+# Send other apps to a catch all workspace only on startup
+[[on-window-detected]]
+if.during-aerospace-startup = true
+check-further-callbacks = false
+run = 'move-node-to-workspace 3'
+
+# Assign certain workspace to certain monitors
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'main'
+7 = ['secondary', 'main']
+8 = ['secondary', 'main']
+9 = ['secondary', 'main']

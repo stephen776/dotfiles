@@ -1,0 +1,63 @@
+set relativenumber number
+set autoindent true
+set number true
+set commentary
+
+let mapleader = " "
+
+"""Allow moving of lines up/down with alt+hjkl"
+nnoremap <A-e> :m .+1<CR>==
+nnoremap <A-u> :m .-2<CR>==
+inoremap <A-e> <Esc>:m .+1<CR>==gi
+inoremap <A-u> <Esc>:m .-2<CR>==gi
+vnoremap <A-e> :m '>+1<CR>gv=gv
+vnoremap <A-u> :m '<-2<CR>gv=gv
+
+"""Exit insert mode"
+inoremap jk <ESC>
+
+"""Keep cursor centered when jumping half page with Ctrl-d/u"
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+""" Keep curor centered when itreating search results"
+nnoremap n nzz
+nnoremap N Nzz
+
+"""When deleting char with x don't overwirte default buffer"
+nnoremap x "_x
+
+"""Q is evil"
+nnoremap Q <nop>
+
+"""Clear search highlights"
+nnoremap <leader>h :nohl<CR>
+
+"""Paste over selection without overwriting default buffer"
+xnoremap <leader>p "_dP
+
+"""Yank into system clipboard"
+nnoremap <leader>y "+y 
+vnoremap <leader>y "+y 
+nnoremap <leader>Y "+Y
+
+"""Window splits"
+sethandler <C-w> a:vim
+nnoremap <leader>| <C-w>v
+nnoremap <leader>\ <C-w>v
+nnoremap <leader>- <C-w>s
+nnoremap <leader>wd <C-w>c
+nnoremap <C-n> <C-w>h
+nnoremap <C-e> <C-w>j
+nnoremap <C-u> <C-w>k
+nnoremap <C-i> <C-w>l
+
+nmap <S-Left> <Action>(PreviousTab)
+nmap <S-Right> <Action>(NextTab)
+
+nnoremap <CR> ciw
+nnoremap <BS> <C-o>
+nnoremap <Tab> <C-i>
+nnoremap <leader><space> :action GoToFile<CR>
+nnoremap <leader>f :action GoToFile<CR>
+nnoremap <leader>/ :action SearchEverywhere<CR>
