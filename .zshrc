@@ -4,7 +4,7 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 # set zsh theme to empty to support Pure prompt
 ZSH_THEME=""
 
-plugins=(git web-search fzf)
+plugins=(git web-search fzf zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 
 # init zoxide
