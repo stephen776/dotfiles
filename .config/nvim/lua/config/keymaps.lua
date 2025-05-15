@@ -54,8 +54,8 @@ map("n", "u", ":undo<CR>", { noremap = true, silent = true, desc = "Undo last ch
 
 map("n", "Q", "<nop>")
 map("n", "<CR>", "ciw")
-map("n", "<BS>", "<C-o>")
-map("n", "<Tab>", "<C-i>")
+map("n", "<A-Left>", "<C-o>")
+map("n", "<A-Right>", "<C-i>", { noremap = true })
 
 -- buffers
 if Util.has("bufferline.nvim") then
@@ -70,4 +70,4 @@ end
 map("n", "<C-n>", "<C-w>h", { desc = "Go to left window" })
 map("n", "<C-e>", "<C-w>j", { desc = "Go to lower window" })
 map("n", "<C-u>", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<C-i>", "<C-w>l", { desc = "Go to right window" })
+map("n", "<C-i>", "<C-w>l", { desc = "Go to right window", noremap = true })
