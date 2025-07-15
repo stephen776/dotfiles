@@ -103,10 +103,7 @@
   j down
   k up
   l rght
-  ; ret
-  z mute
-  x vold
-  c volu
+  ; del
   v pp
   n tab
   m bspc
