@@ -89,11 +89,11 @@
 (deflayermap (extend)
   e (layer-switch fumbol)
   r (on-press press-virtualkey shift)
-  y ins
-  u home
-  i up
+  y home
+  u pgdn
+  i pgdn
   o end
-  p pgup
+  p del
   a lmet
   s lalt
   d lsft
@@ -103,7 +103,7 @@
   j down
   k up
   l rght
-  ; pgdn
+  ; ret
   z mute
   x vold
   c volu
@@ -111,8 +111,8 @@
   n tab
   m bspc
   , del
-  . del
-  / ret
+  ;; . ret
+  ;; / ret
 )
 
 (defchords ftl $chord-timeout
