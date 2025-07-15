@@ -4,6 +4,7 @@
 )
 
 (defsrc
+  caps
   q w e r t y u i o p
   a s d f g h j k l ;
   z x c v b n m , . /
@@ -55,6 +56,7 @@
 )
 
 (deflayermap (main)
+  caps esc
   w (chord mtl w)
   e (chord mtl e)
   i (chord mtr i)
@@ -63,6 +65,8 @@
   s (t! charmod s lctl)
   d (t! charmod d lalt)
   f (t! charmod f lmet)
+  g (t! charmod g (multi lsft lctl lalt lmet))
+  h (t! charmod h (multi lsft lctl lalt lmet))
   j (t! charmod j rmet)
   k (t! charmod k ralt)
   l (t! charmod l lctl)
@@ -146,8 +150,8 @@
   s (t! charmod 2 lalt)
   d (t! charmod 3 lsft)
   f (t! charmod 4 lctl)
-  g 5
-  h 6
+  g (t! charmod 5 (multi lsft lctl lalt lmet))
+  h (t! charmod 6 (multi lsft lctl lalt lmet))
   j (t! charmod 7 rctl)
   k (t! charmod 8 rsft)
   l (t! charmod 9 lalt)
