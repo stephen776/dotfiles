@@ -1,0 +1,58 @@
+(defcfg
+  process-unmapped-keys yes
+)
+(defsrc
+  caps a   s   d   f   spc  i   j   k   l   ;
+)
+(defvar
+  tap-time 200
+  hold-time 150
+
+  left-hand-keys (
+    q w e r t
+    a s d f g
+    z x c v b
+  )
+  right-hand-keys (
+    y u i o p
+    h j k l ;
+    n m , . /
+  )
+)
+(deflayer base
+  @caps @a  @s  @d  @f  @spc  i   @j  @k  @l  @;
+)
+
+(deflayer nomods
+  caps a   s   d   f   spc  i   j   k   l   ;
+)
+
+(deflayer spacebar
+  caps @spc-a @spc-s @spc-d @spc-f spc up left down right ;
+)
+(deffakekeys
+  to-base (layer-switch base)
+)
+(defalias
+  tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
+
+  a (tap-hold-release-keys $tap-time $hold-time (multi a @tap) lsft $left-hand-keys)
+  s (tap-hold-release-keys $tap-time $hold-time (multi s @tap) lctl $left-hand-keys)
+  d (tap-hold-release-keys $tap-time $hold-time (multi d @tap) lalt $left-hand-keys)
+  f (tap-hold-release-keys $tap-time $hold-time (multi f @tap) lmet $left-hand-keys)
+  j (tap-hold-release-keys $tap-time $hold-time (multi j @tap) rmet $right-hand-keys)
+  k (tap-hold-release-keys $tap-time $hold-time (multi k @tap) ralt $right-hand-keys)
+  l (tap-hold-release-keys $tap-time $hold-time (multi l @tap) rctl $right-hand-keys)
+  ; (tap-hold-release-keys $tap-time $hold-time (multi ; @tap) rsft $right-hand-keys)
+  
+  caps (tap-hold $tap-time $hold-time esc (multi lsft lctl lalt lmet))
+  spc (tap-hold $tap-time $hold-time spc (layer-toggle spacebar))
+  
+  spc-a (tap-hold $tap-time $hold-time a lsft)
+  spc-s (tap-hold $tap-time $hold-time s lctl)
+  spc-d (tap-hold $tap-time $hold-time d lalt)
+  spc-f (tap-hold $tap-time $hold-time f lmet)
+)
