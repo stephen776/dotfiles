@@ -4,22 +4,42 @@ return {
   enabled = true,
   keys = {
     {
-      "<C-n>",
+      "<C-m>",
       "<cmd>KittyNavigateLeft<cr>",
       desc = "Navigate window left",
     },
     {
-      "<C-e>",
+      "<C-n>",
       "<cmd>KittyNavigateDown<cr>",
       desc = "Navigate window down",
     },
     {
-      "<C-u>",
+      "<C-e>",
       "<cmd>KittyNavigateUp<cr>",
       desc = "Navigate window up",
     },
     {
       "<C-i>",
+      "<cmd>KittyNavigateRight<cr>",
+      desc = "Navigate window right",
+    },
+    {
+      "<C-h>",
+      "<cmd>KittyNavigateLeft<cr>",
+      desc = "Navigate window left",
+    },
+    {
+      "<C-j>",
+      "<cmd>KittyNavigateDown<cr>",
+      desc = "Navigate window down",
+    },
+    {
+      "<C-k>",
+      "<cmd>KittyNavigateUp<cr>",
+      desc = "Navigate window up",
+    },
+    {
+      "<C-l>",
       "<cmd>KittyNavigateRight<cr>",
       desc = "Navigate window right",
     },

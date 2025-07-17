@@ -98,13 +98,12 @@
   s lalt
   d lsft
   f lctl
-;;g comp ;; Enable if not MacOS.
   h left
   j down
   k up
   l rght
   ; del
-  v pp
+  v ret
   n tab
   m bspc
   , del
