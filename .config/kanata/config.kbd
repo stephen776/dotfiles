@@ -12,7 +12,7 @@
   q w e r t y u i o p
   a s d f g h j k l ;
   z x c v b n m , . /
-         spc
+         spc rmet
 )
 
 (defvar
@@ -35,40 +35,11 @@
   clear (multi (layer-switch main) (on-press release-virtualkey shift))
 )
 
-(defchords mtl $chord-timeout
-  (w  ) w
-  (  e) e
-  (w e) esc
-)
-
-(defchords mtr $chord-timeout
-  (i  ) i
-  (  o) o
-  (i o) bspc
-)
-
-(defchords mbl $chord-timeout
-  (x  ) (t! charmod x ralt)
-  (  c) c
-  (x c) tab
-)
-
-(defchords mbr $chord-timeout
-  (,  ) ,
-  (  .) (t! charmod . ralt)
-  (, .) ret
-)
 
 (deflayermap (main)
-  w (chord mtl w)
-  e (chord mtl e)
-  i (chord mtr i)
-  o (chord mtr o)
-  x (chord mbl x)
-  c (chord mbl c)
-  , (chord mbr ,)
-  . (chord mbr .)
+  caps (tap-hold-release-timeout $tap-timeout $hold-timeout esc lctl esc)
   spc (t! charmod spc (multi (layer-switch extend) (on-release tap-virtualkey clear)))
+  rmet (multi lsft lctl lalt lmet)
 )
 
 (deflayermap (extend)
@@ -84,4 +55,6 @@
   j down
   k up
   l rght
+  m bspc
+  n ret
 )
