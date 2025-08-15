@@ -54,8 +54,11 @@ map("n", "u", ":undo<CR>", { noremap = true, silent = true, desc = "Undo last ch
 
 map("n", "Q", "<nop>")
 map("n", "<CR>", "ciw")
+
 map("n", "<A-Left>", "<C-o>")
 map("n", "<A-Right>", "<C-i>", { noremap = true })
+map("n", "<M-b>", "<C-o>")
+map("n", "<M-f>", "<C-i>", { noremap = true })
 
 -- buffers
 if Util.has("bufferline.nvim") then

@@ -4,6 +4,10 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 # set zsh theme to empty to support Pure prompt
 ZSH_THEME=""
 
+# key bindings
+bindkey '^H' backward-kill-word
+
+#  plugins
 plugins=(git web-search fzf zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 
