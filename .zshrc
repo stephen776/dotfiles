@@ -1,4 +1,7 @@
 export ZSH="$HOME/.oh-my-zsh"
+
+export PATH="$HOME/.local/bin/scripts:$PATH"
+
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
 # set zsh theme to empty to support Pure prompt
@@ -6,6 +9,9 @@ ZSH_THEME=""
 
 # key bindings
 bindkey '^H' backward-kill-word
+
+# tmux-sessionizer
+bindkey -s ^f "tmux-sessionizer\n"
 
 #  plugins
 plugins=(git web-search fzf zsh-nvm)
