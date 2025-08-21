@@ -1,10 +1,10 @@
 (defcfg
+;; You can set the value below to no if you only use the keys defined in defsrc.
+  process-unmapped-keys yes
   macos-dev-names-include (
     "Apple Internal Keyboard / Trackpad"
   )
 
-;; You can set the value below to no if you only use the keys defined in defsrc.
-  process-unmapped-keys yes
 )
 
 (defsrc
@@ -12,7 +12,7 @@
   q w e r t y u i o p
   a s d f g h j k l ;
   z x c v b n m , . /
-         spc rmet
+         spc
 )
 
 (defvar
@@ -24,7 +24,7 @@
 )
 
 (deftemplate charmod (char mod)
-  (switch 
+  (switch
     ((key-timing $streak-count less-than $streak-time)) $char break
     () (tap-hold-release-timeout $tap-timeout $hold-timeout $char $mod $char) break
   )
@@ -35,71 +35,98 @@
   clear (multi (layer-switch main) (on-press release-virtualkey shift))
 )
 
+(defchords mtl $chord-timeout
+  (w  ) w
+  (  f) f 
+  (w f) esc
+)
+
+(defchords mtr $chord-timeout
+  (u  ) u 
+  (  y) y 
+  (u y) bspc
+)
+
+(defchords mbl $chord-timeout
+  (x  ) (t! charmod x ralt)
+  (  c) c
+  (x c) tab
+)
+
+(defchords mbr $chord-timeout
+  (,  ) ,
+  (  .) (t! charmod . ralt)
+  (, .) ret
+)
 
 (deflayermap (main)
-  ;; Colemak-DH matrix layout mapping
-  ;; Top row: q w f p b  j l u y ;
+  q q
+  w (chord mtl w)
+  e (chord mtl f)
+  r p
+  t b
+  y j
+  u l
+  i (chord mtr u)
+  o (chord mtr y)
+  p ;
+
+  a (t! charmod a lmet)
+  s (t! charmod r lalt)
+  d (t! charmod s lctl)
+  f (t! charmod t lsft)
+  g (t! charmod g (multi lmet lalt lctl lsft))
+  h (t! charmod m (multi lmet lalt lctl lsft))
+  j (t! charmod n rsft)
+  k (t! charmod e rctl)
+  l (t! charmod i lalt)
+  ; (t! charmod o rmet)
+
+  z z
+  x (chord mbl x)
+  c (chord mbl c)
+  v d
+  b v
+  n k
+  m h 
+  , (chord mbr ,)
+  . (chord mbr .)
+  / /
+  spc (t! charmod spc (multi (layer-switch extend) (on-release tap-virtualkey clear)))
+)
+
+(deflayermap (extend)
   q q
   w w
   e f
   r p
   t b
   y j
-  u l
-  i u
-  o y
-  p ;
-  
-  ;; Home row: a r s t g  m n e i o
-  a a
-  s r
-  d s
-  f t
+  u home
+  i up
+  o end
+  p pgup
+
+  a lmet
+  s lalt
+  d lctl
+  f lsft
   g g
-  h m
-  j n
-  k e
-  l i
-  ; o
-  
-  ;; Bottom row: z x c d v  k h , . /
+  h esc
+  j left
+  k down
+  l rght
+  ; pgdn
+
   z z
   x x
   c c
   v d
-  b v
-  n k
-  m h
-  , ,
-  . .
-  / /
-  
-  ;; Special keys
-  caps (tap-hold-release-timeout $tap-timeout $hold-timeout esc lctl esc)
-  spc (t! charmod spc (multi (layer-switch extend) (on-release tap-virtualkey clear)))
-  rmet (multi lsft lctl lalt lmet)
+  b v 
+  n tab
+  m bspc
+  , spc
+  . del
+  / ret
 )
 
-(deflayermap (extend)
-  ;; Navigation keys (updated for Colemak-DH layout)
-  l pgdn   ;; physical 'u' key -> 'l' in Colemak-DH
-  u pgup   ;; physical 'i' key -> 'u' in Colemak-DH  
-  j home   ;; physical 'y' key -> 'j' in Colemak-DH
-  , del    ;; comma stays the same
-  
-  ;; Modifier keys on home row (Colemak-DH positions)
-  a lsft   ;; 'a' stays the same
-  r lctl   ;; physical 's' key -> 'r' in Colemak-DH
-  s lalt   ;; physical 'd' key -> 's' in Colemak-DH
-  t lmet   ;; physical 'f' key -> 't' in Colemak-DH
-  
-  ;; Arrow keys (using Colemak-DH right hand home row)
-  m left   ;; physical 'h' key -> 'm' in Colemak-DH
-  n down   ;; physical 'j' key -> 'n' in Colemak-DH
-  e up     ;; physical 'k' key -> 'e' in Colemak-DH
-  i rght   ;; physical 'l' key -> 'i' in Colemak-DH
-  
-  ;; Common actions
-  h bspc   ;; physical 'm' key -> 'h' in Colemak-DH
-  k ret    ;; physical 'n' key -> 'k' in Colemak-DH
-)
