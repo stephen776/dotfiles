@@ -76,4 +76,4 @@ map("n", "<C-u>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-i>", "<C-w>l", { desc = "Go to right window", noremap = true })
 
 -- tmux-sessionizer
-map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Tmux sessionizer" })
+map("n", "<C-t>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Tmux sessionizer" })

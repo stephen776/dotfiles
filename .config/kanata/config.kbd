@@ -19,7 +19,7 @@
   streak-count 3
   streak-time 325
   tap-timeout 200
-  hold-timeout 500
+  hold-timeout 2500
   chord-timeout 50
 )
 
@@ -60,6 +60,7 @@
 )
 
 (deflayermap (main)
+  caps esc
   q q
   w (chord mtl w)
   e (chord mtl f)
