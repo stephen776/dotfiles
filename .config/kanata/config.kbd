@@ -3,6 +3,7 @@
   process-unmapped-keys yes
   macos-dev-names-include (
     "Apple Internal Keyboard / Trackpad"
+    "Flow84@Lofree"
   )
 
 )
@@ -113,9 +114,9 @@
   d lctl
   f lsft
   g g
-  h esc
-  j left
-  k down
+  h left
+  j down
+  k up
   l rght
   ; pgdn
 
