@@ -70,9 +70,9 @@ else
 end
 
 -- Move to window using the <ctrl> "ijkl" keys
-map("n", "<C-n>", "<C-w>h", { desc = "Go to left window" })
-map("n", "<C-e>", "<C-w>j", { desc = "Go to lower window" })
-map("n", "<C-u>", "<C-w>k", { desc = "Go to upper window" })
+map("n", "<C-m>", "<C-w>h", { desc = "Go to left window" })
+map("n", "<C-n>", "<C-w>j", { desc = "Go to lower window" })
+map("n", "<C-e>", "<C-w>k", { desc = "Go to upper window" })
 map("n", "<C-i>", "<C-w>l", { desc = "Go to right window", noremap = true })
 
 -- tmux-sessionizer
