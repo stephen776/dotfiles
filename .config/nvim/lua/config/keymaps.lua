@@ -15,14 +15,6 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
--- Move Lines
-map("n", "<A-Down>", "<cmd>m .+1<cr>==", { desc = "Move down" })
-map("n", "<A-Up>", "<cmd>m .-2<cr>==", { desc = "Move up" })
-map("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
-map("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move up" })
-map("v", "<A-Down>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
-map("v", "<A-Up>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
-
 -- keep cursor in the middle when half page jumping
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
@@ -54,26 +46,6 @@ map("n", "u", ":undo<CR>", { noremap = true, silent = true, desc = "Undo last ch
 
 map("n", "Q", "<nop>")
 map("n", "<CR>", "ciw")
-
-map("n", "<A-Left>", "<C-o>")
-map("n", "<A-Right>", "<C-i>", { noremap = true })
-map("n", "<M-b>", "<C-o>")
-map("n", "<M-f>", "<C-i>", { noremap = true })
-
--- buffers
-if Util.has("bufferline.nvim") then
-  map("n", "<S-Left>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-  map("n", "<S-Right>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
-else
-  map("n", "<S-Left>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-  map("n", "<S-Right>", "<cmd>bnext<cr>", { desc = "Next buffer" })
-end
-
--- Move to window using the <ctrl> "ijkl" keys
-map("n", "<C-m>", "<C-w>h", { desc = "Go to left window" })
-map("n", "<C-n>", "<C-w>j", { desc = "Go to lower window" })
-map("n", "<C-e>", "<C-w>k", { desc = "Go to upper window" })
-map("n", "<C-i>", "<C-w>l", { desc = "Go to right window", noremap = true })
 
 -- tmux-sessionizer
 map("n", "<C-t>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Tmux sessionizer" })

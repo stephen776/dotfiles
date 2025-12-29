@@ -3,7 +3,6 @@
   process-unmapped-keys yes
   macos-dev-names-include (
     "Apple Internal Keyboard / Trackpad"
-    "Flow84@Lofree"
   )
 
 )
@@ -32,67 +31,42 @@
 )
 
 (defvirtualkeys
-  shift (multi (layer-switch main) lsft)
-  clear (multi (layer-switch main) (on-press release-virtualkey shift))
-)
-
-(defchords mtl $chord-timeout
-  (w  ) w
-  (  f) f 
-  (w f) esc
-)
-
-(defchords mtr $chord-timeout
-  (u  ) u 
-  (  y) y 
-  (u y) bspc
-)
-
-(defchords mbl $chord-timeout
-  (x  ) (t! charmod x ralt)
-  (  c) c
-  (x c) tab
-)
-
-(defchords mbr $chord-timeout
-  (,  ) ,
-  (  .) (t! charmod . ralt)
-  (, .) ret
+  clear (layer-switch main)
 )
 
 (deflayermap (main)
   caps esc
   q q
-  w (chord mtl w)
-  e (chord mtl f)
-  r p
-  t b
-  y j
-  u l
-  i (chord mtr u)
-  o (chord mtr y)
-  p ;
+  w w
+  e e
+  r r 
+  t t 
+  y y 
+  u u 
+  i i
+  o o
+  p p 
 
-  a (t! charmod a lmet)
-  s (t! charmod r lalt)
-  d (t! charmod s lctl)
-  f (t! charmod t lsft)
+  a (t! charmod a lsft)
+  s (t! charmod s lctl)
+  d (t! charmod d lalt)
+  f (t! charmod f lmet)
   g (t! charmod g (multi lmet lalt lctl lsft))
-  h (t! charmod m (multi lmet lalt lctl lsft))
-  j (t! charmod n rsft)
-  k (t! charmod e rctl)
-  l (t! charmod i lalt)
-  ; (t! charmod o rmet)
+  h (t! charmod h (multi lmet lalt lctl lsft))
+  j (t! charmod j rmet)
+  k (t! charmod k lalt)
+  l (t! charmod l rctl)
+  ; (t! charmod ; rsft)
 
   z z
-  x (chord mbl x)
-  c (chord mbl c)
-  v d
-  b v
-  n k
-  m h 
-  , (chord mbr ,)
-  . (chord mbr .)
+  x x
+  c c 
+  v v 
+  b b 
+  n n 
+  m m 
+  , ,
+  . .
   / /
   spc (t! charmod spc (multi (layer-switch extend) (on-release tap-virtualkey clear)))
 )
@@ -100,19 +74,19 @@
 (deflayermap (extend)
   q q
   w w
-  e f
-  r p
-  t b
-  y j
+  e e 
+  r r 
+  t t 
+  y y 
   u home
   i up
   o end
   p pgup
 
-  a lmet
-  s lalt
-  d lctl
-  f lsft
+  a lsft
+  s lctl
+  d lalt
+  f lmet
   g g
   h left
   j down
@@ -123,8 +97,8 @@
   z z
   x x
   c c
-  v d
-  b v 
+  v v 
+  b b 
   n tab
   m bspc
   , spc
