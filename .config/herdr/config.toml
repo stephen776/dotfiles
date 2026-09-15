@@ -1,0 +1,47 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+a"
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+reload_config = "prefix+r"
+zoom = "prefix+m"
+detach = "prefix+d"
+rename_tab = "prefix+,"
+workspace_picker = "prefix+f"
+
+# Prefix movement keys are reserved for resizing, as in .tmux.conf.
+focus_pane_left = ""
+focus_pane_down = ""
+focus_pane_up = ""
+focus_pane_right = ""
+resize_pane_left = "prefix+h"
+resize_pane_down = "prefix+j"
+resize_pane_up = "prefix+k"
+resize_pane_right = "prefix+l"
+resize_mode = "prefix+shift+r"
+# Open scrollback at the familiar tmux copy-mode shortcut.
+edit_scrollback = "prefix+["
+previous_tab = ["prefix+p", "ctrl+shift+h"]
+next_tab = ["prefix+n", "ctrl+shift+l"]
+last_pane = "ctrl+backslash"
+
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "herdr-splits.nav-left"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "herdr-splits.nav-down"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "herdr-splits.nav-up"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "herdr-splits.nav-right"

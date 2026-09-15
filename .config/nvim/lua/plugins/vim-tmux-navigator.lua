@@ -1,5 +1,6 @@
 return {
   "christoomey/vim-tmux-navigator",
+  enabled = false, -- Replaced by herdr-splits.nvim; retain the tmux bindings for reference.
   cmd = {
     "TmuxNavigateLeft",
     "TmuxNavigateDown",
@@ -9,10 +10,6 @@ return {
     "TmuxNavigatorProcessList",
   },
   keys = {
-    { "<c-m>", "<cmd>TmuxNavigateLeft<cr>" },
-    { "<c-n>", "<cmd>TmuxNavigateDown<cr>" },
-    { "<c-e>", "<cmd>TmuxNavigateUp<cr>" },
-    { "<c-i>", "<cmd>TmuxNavigateRight<cr>" },
     { "<c-h>", "<cmd>TmuxNavigateLeft<cr>" },
     { "<c-j>", "<cmd>TmuxNavigateDown<cr>" },
     { "<c-k>", "<cmd>TmuxNavigateUp<cr>" },

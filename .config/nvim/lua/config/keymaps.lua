@@ -47,5 +47,7 @@ map("n", "u", ":undo<CR>", { noremap = true, silent = true, desc = "Undo last ch
 map("n", "Q", "<nop>")
 map("n", "<CR>", "ciw")
 
--- tmux-sessionizer
-map("n", "<C-t>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Tmux sessionizer" })
+-- Retain the tmux sessionizer outside Herdr. Use prefix+f for Herdr workspaces.
+if vim.env.HERDR_ENV ~= "1" then
+  map("n", "<C-t>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Tmux sessionizer" })
+end
