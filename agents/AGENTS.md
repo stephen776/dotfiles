@@ -33,6 +33,16 @@ I want to share some of my preferences here so that we can be more aligned as we
 - Do not spawn subagents or a multi-agent panel for work a single agent finishes in one pass. Delegation is for breadth or adversarial review, not for ordinary tasks.
 - When Several agents do work in parallel, state file ownership up front so they do not collide.
 
+## Worktrees
+
+One agent, one worktree. A working directory has exactly one branch checked out, so two agents sharing one will commit each other's half-finished edits and switch the branch out from under each other. This is the structural fix for the collision above: reach for a worktree before spawning the second agent, not after the first conflict.
+
+- Name the base when you branch: `git worktree add ../<repo>-<topic> -b <topic> main`. A branch cut from whatever happened to be checked out inherits that branch's commits, and unpicking that later is a rebase, not a checkout.
+- Put worktrees beside the repo as sibling directories. A worktree shares the object database, so commits survive its directory being deleted — uncommitted work does not, which is what makes `/tmp` the wrong home for one.
+- Run `git worktree list` before switching branches or assuming a directory is yours. Git refuses to check out a branch that is live in another worktree; that refusal is information, not an obstacle to route around.
+- Finish work in the worktree it started in. When it genuinely has to move, verify the files are identical on both sides before discarding either copy.
+- Remove a worktree once its branch merges. A stale one keeps that branch checked out and blocks it everywhere else.
+
 ## Visual and design work
 - Do not edit real components first. For any non-trivial UI, layout, or copy change, build several distinct static mocks, publish them via the `html-communication` skill, report the URL, and stop. Wait for me to pick an option before implementing.
 - Branding constraints: dark mode, true black (`#000`) background, white primary text. Information-dense, no decorative card/pill chrome, no light-gray subtitle lines above sections. Minimal copy, No em dashes.
