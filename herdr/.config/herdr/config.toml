@@ -1,0 +1,83 @@
+onboarding = false
+
+[keys]
+prefix = "ctrl+a"
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+reload_config = "prefix+r"
+zoom = "prefix+m"
+detach = "prefix+d"
+rename_tab = "prefix+shift+t"
+workspace_picker = "prefix+f"
+# Shift+Space+j/k: kanata's Space-hold extend layer sends j/k as Down/Up.
+next_workspace = "shift+down"
+previous_workspace = "shift+up"
+
+# Prefix movement keys are reserved for resizing, as in .tmux.conf.
+focus_pane_left = ""
+focus_pane_down = ""
+focus_pane_up = ""
+focus_pane_right = ""
+resize_pane_left = "prefix+h"
+resize_pane_down = "prefix+j"
+resize_pane_up = "prefix+k"
+resize_pane_right = "prefix+l"
+resize_mode = "prefix+shift+r"
+# Open scrollback at the familiar tmux copy-mode shortcut.
+edit_scrollback = "prefix+["
+previous_tab = ["prefix+p", "ctrl+shift+h"]
+next_tab = ["prefix+n", "ctrl+shift+l"]
+last_pane = "ctrl+backslash"
+
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "herdr-splits.nav-left"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "herdr-splits.nav-down"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "herdr-splits.nav-up"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "herdr-splits.nav-right"
+
+[theme]
+name = "rose-pine"
+
+[terminal]
+# Matches -c "#{pane_current_path}" on every split, window, and session
+new_cwd = "follow"
+
+[ui]
+# tmux drew single-line dividers between adjacent panes and no outer frame
+pane_gaps = false
+pane_outer_borders = false
+
+# tmux had no scrollbar column beside its panes
+pane_scrollbars = false
+
+# kill-window and kill-session never asked
+confirm_close = false
+
+# automatic-rename gave windows a name without prompting
+prompt_new_tab_name = false
+
+# set -g mouse on
+mouse_capture = true
+
+# status-right had the zoom flag followed by #h
+tab_bar_right = [{ type = "zoom" }, { type = "hostname" }]
+
+# set -g set-titles on / set -g set-titles-string '#h:#W', where tmux's #W was
+# the basename of the pane cwd. This is what Hyprland shows in the group bar,
+# and it resolves on the server so remote sessions name the remote host.
+window_title = "{hostname}: {workspace}"
+status_indicators = "dots"

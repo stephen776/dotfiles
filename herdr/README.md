@@ -1,9 +1,10 @@
 # Herdr bindings
 
-`config.toml` is linked to `~/.config/herdr/config.toml`.
+`.config/herdr/config.toml` is linked to `~/.config/herdr/config.toml` by `stow herdr`.
 Install the terminal half with `herdr plugin install lmilojevicc/herdr-splits.nvim`.
 Lazy installs the Neovim half from `lua/plugins/herdr-splits.lua` when starting
-Neovim inside Herdr. The old tmux navigator spec is retained with `enabled = false`.
+Neovim inside Herdr. The Linux Neovim package enables tmux navigation only outside
+Herdr; the macOS package retains its disabled tmux navigator spec.
 After changing Herdr config, run `herdr config check` and `herdr server reload-config`.
 
 | Keys | Action |
@@ -14,8 +15,9 @@ After changing Herdr config, run `herdr config check` and `herdr server reload-c
 | Prefix then h/j/k/l | Resize Herdr panes |
 | Prefix then m | Zoom pane |
 | Ctrl-Shift-h/l or prefix then p/n | Previous / next tab |
-| Prefix then c / , / x / d | New tab / rename tab / close pane / detach |
+| Prefix then c / Shift-t / x / d | New tab / rename tab / close pane / detach |
 | Prefix then f | Workspace picker |
+| Shift-Space-j/k (Shift-Down/Up) | Next / previous workspace |
 | Prefix then r | Reload config |
 | Prefix then Shift-r | Herdr resize mode |
 | Prefix then [ | Edit scrollback |

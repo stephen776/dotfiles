@@ -35,7 +35,7 @@
 )
 
 (deflayermap (main)
-  caps esc
+  caps (tap-hold-release $tap-timeout $hold-timeout esc lctl)
   q q
   w w
   e e

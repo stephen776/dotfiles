@@ -1,0 +1,14 @@
+[Unit]
+Description=Kanata keyboard remapper
+Documentation=https://github.com/jtroo/kanata
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanata --cfg %h/.config/kanata/kanata.kbd
+Restart=on-failure
+RestartSec=3
+# Keep remapping responsive when the machine is loaded
+Nice=-11
+
+[Install]
+WantedBy=default.target
