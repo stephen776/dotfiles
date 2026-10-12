@@ -9,9 +9,8 @@ zoom = "prefix+m"
 detach = "prefix+d"
 rename_tab = "prefix+shift+t"
 workspace_picker = "prefix+f"
-# Shift+Space+j/k: kanata's Space-hold extend layer sends j/k as Down/Up.
-next_workspace = "shift+down"
-previous_workspace = "shift+up"
+next_workspace = "ctrl+shift+j"
+previous_workspace = "ctrl+shift+k"
 
 # Prefix movement keys are reserved for resizing, as in .tmux.conf.
 focus_pane_left = ""

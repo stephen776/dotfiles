@@ -17,7 +17,7 @@ After changing Herdr config, run `herdr config check` and `herdr server reload-c
 | Ctrl-Shift-h/l or prefix then p/n | Previous / next tab |
 | Prefix then c / Shift-t / x / d | New tab / rename tab / close pane / detach |
 | Prefix then f | Workspace picker |
-| Shift-Space-j/k (Shift-Down/Up) | Next / previous workspace |
+| Ctrl-Shift-j/k | Next / previous workspace |
 | Prefix then r | Reload config |
 | Prefix then Shift-r | Herdr resize mode |
 | Prefix then [ | Edit scrollback |
