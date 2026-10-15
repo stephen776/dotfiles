@@ -44,8 +44,7 @@ One agent, one worktree. A working directory has exactly one branch checked out,
 - Remove a worktree once its branch merges. A stale one keeps that branch checked out and blocks it everywhere else.
 
 ## Visual and design work
-- Do not edit real components first. For any non-trivial UI, layout, or copy change, build several distinct static mocks, publish them via the `html-communication` skill, report the URL, and stop. Wait for me to pick an option before implementing.
-- Branding constraints: dark mode, true black (`#000`) background, white primary text. Information-dense, no decorative card/pill chrome, no light-gray subtitle lines above sections. Minimal copy. No em dashes.
+- Do not edit real components first. For any non-trivial UI, layout, or copy change, build several distinct static mocks, publish them as a shareable page (an Artifact in Claude Code), report the URL, and stop. Wait for me to pick an option before implementing.
 
 ## Blast radius
 - Never touch production, live databases, or daily-driver build/preview channels unless explicitly told to do so. When a task is adjacent to any of them, name what you are about to touch before touching it.
