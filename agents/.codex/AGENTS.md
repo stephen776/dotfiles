@@ -28,6 +28,12 @@ I want to share some of my preferences here so that we can be more aligned as we
 - A question is a request for an answer, not for changes. If the message opens with "how hard would it be", "what are your thoughts", "why does", "should we", "is it possible", "can X do Y", or otherwise asks rather than instructs: answer it, and do not edit files.
 - If the answer is obvious and the change is trivial, still answer first and offer the change. Ask before making it.
 
+## What you need from me
+- End every turn where you're blocked on me, or where the next step needs me, with a short "**What I need from you**" section. Numbered, one concrete action per item: exactly what to do, where (which site, app, file or person), and what to send back. e.g. "Log into CommBank NetBank and export Jan to Jun 2026 as CSV, then drop it in `inbox/`", not "I need the bank data".
+- If there are several, put the quickest or most blocking one first, and say what you'll get on with in the meantime.
+- If you don't need anything from me, say "Nothing needed from you right now" so I don't have to ask.
+- Never bury a request for me in the middle of a long update.
+
 ## Match ceremony to the task
 
 - Do not spawn subagents or a multi-agent panel for work a single agent finishes in one pass. Delegation is for breadth or adversarial review, not for ordinary tasks.
